@@ -94,6 +94,11 @@
     <Compile Include="StringJoin.cs" />
     <Compile Include="ThreadAffinity.cs" />
     <Compile Include="ThreadAffinityException.cs" />
+    <Compile Include="Time\ConstantTimeContext.cs" />
+    <Compile Include="Time\ITimeContext.cs" />
+    <Compile Include="Time\OffsetTimeContext.cs" />
+    <Compile Include="Time\PlatformTimeContext.cs" />
+    <Compile Include="Time\UtcTimeContext.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
