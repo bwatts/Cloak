@@ -109,6 +109,10 @@
     <Compile Include="Linq\TypedLambdaExpressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PubliclyReadOnlyCollection.cs" />
+    <Compile Include="Reflection\AttributeSelection.cs" />
+    <Compile Include="Reflection\GenericMethodBase.cs" />
+    <Compile Include="Reflection\TypeDefaultValue.cs" />
+    <Compile Include="Reflection\TypeNullability.cs" />
     <Compile Include="StringJoin.cs" />
     <Compile Include="ThreadAffinity.cs" />
     <Compile Include="ThreadAffinityException.cs" />
@@ -124,6 +128,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

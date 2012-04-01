@@ -18,6 +18,7 @@ namespace Cloak.Linq
 		/// <typeparam name="TResult">The return type of the lambda expression</typeparam>
 		/// <param name="lambda">The lambda expression for which the strongly-typed lambda expression is created</param>
 		/// <returns>A strongly-typed version of the specified lambda expression</returns>
+		[Pure]
 		public static Expression<Func<TResult>> AsFunc<TResult>(this LambdaExpression lambda)
 		{
 			Contract.Requires(lambda != null);
@@ -32,6 +33,7 @@ namespace Cloak.Linq
 		/// <typeparam name="TResult">The return type of the lambda expression</typeparam>
 		/// <param name="lambda">The lambda expression for which the strongly-typed lambda expression is created</param>
 		/// <returns>A strongly-typed version of the specified lambda expression</returns>
+		[Pure]
 		public static Expression<Func<T, TResult>> AsFunc<T, TResult>(this LambdaExpression lambda)
 		{
 			Contract.Requires(lambda != null);
@@ -47,6 +49,7 @@ namespace Cloak.Linq
 		/// <typeparam name="TResult">The return type of the lambda expression</typeparam>
 		/// <param name="lambda">The lambda expression for which the strongly-typed lambda expression is created</param>
 		/// <returns>A strongly-typed version of the specified lambda expression</returns>
+		[Pure]
 		public static Expression<Func<T1, T2, TResult>> AsFunc<T1, T2, TResult>(this LambdaExpression lambda)
 		{
 			Contract.Requires(lambda != null);
@@ -63,6 +66,7 @@ namespace Cloak.Linq
 		/// <typeparam name="TResult">The return type of the lambda expression</typeparam>
 		/// <param name="lambda">The lambda expression for which the strongly-typed lambda expression is created</param>
 		/// <returns>A strongly-typed version of the specified lambda expression</returns>
+		[Pure]
 		public static Expression<Func<T1, T2, T3, TResult>> AsFunc<T1, T2, T3, TResult>(this LambdaExpression lambda)
 		{
 			Contract.Requires(lambda != null);
@@ -80,6 +84,7 @@ namespace Cloak.Linq
 		/// <typeparam name="TResult">The return type of the lambda expression</typeparam>
 		/// <param name="lambda">The lambda expression for which the strongly-typed lambda expression is created</param>
 		/// <returns>A strongly-typed version of the specified lambda expression</returns>
+		[Pure]
 		public static Expression<Func<T1, T2, T3, T4, TResult>> AsFunc<T1, T2, T3, T4, TResult>(this LambdaExpression lambda)
 		{
 			Contract.Requires(lambda != null);

@@ -18,6 +18,7 @@ namespace Cloak.Linq
 		/// <typeparam name="TResult">The return type of the compiled lambda expression</typeparam>
 		/// <param name="lambda">The lambda expression to be compiled</param>
 		/// <returns>A function representing the executable form of the specified lambda expression</returns>
+		[Pure]
 		public static Func<TResult> Compile<TResult>(this LambdaExpression lambda)
 		{
 			Contract.Requires(lambda != null);
@@ -32,6 +33,7 @@ namespace Cloak.Linq
 		/// <typeparam name="TResult">The return type of the compiled lambda expression</typeparam>
 		/// <param name="lambda">The lambda expression to be compiled</param>
 		/// <returns>A function representing the executable form of the specified lambda expression</returns>
+		[Pure]
 		public static Func<T, TResult> Compile<T, TResult>(this LambdaExpression lambda)
 		{
 			Contract.Requires(lambda != null);
@@ -47,6 +49,7 @@ namespace Cloak.Linq
 		/// <typeparam name="TResult">The return type of the compiled lambda expression</typeparam>
 		/// <param name="lambda">The lambda expression to be compiled</param>
 		/// <returns>A function representing the executable form of the specified lambda expression</returns>
+		[Pure]
 		public static Func<T1, T2, TResult> Compile<T1, T2, TResult>(this LambdaExpression lambda)
 		{
 			Contract.Requires(lambda != null);
@@ -63,6 +66,7 @@ namespace Cloak.Linq
 		/// <typeparam name="TResult">The return type of the compiled lambda expression</typeparam>
 		/// <param name="lambda">The lambda expression to be compiled</param>
 		/// <returns>A function representing the executable form of the specified lambda expression</returns>
+		[Pure]
 		public static Func<T1, T2, T3, TResult> Compile<T1, T2, T3, TResult>(this LambdaExpression lambda)
 		{
 			Contract.Requires(lambda != null);
@@ -80,6 +84,7 @@ namespace Cloak.Linq
 		/// <typeparam name="TResult">The return type of the compiled lambda expression</typeparam>
 		/// <param name="lambda">The lambda expression to be compiled</param>
 		/// <returns>A function representing the executable form of the specified lambda expression</returns>
+		[Pure]
 		public static Func<T1, T2, T3, T4, TResult> Compile<T1, T2, T3, T4, TResult>(this LambdaExpression lambda)
 		{
 			Contract.Requires(lambda != null);

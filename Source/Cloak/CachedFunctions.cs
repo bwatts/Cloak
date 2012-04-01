@@ -19,6 +19,7 @@ namespace Cloak
 		/// <param name="valueFunction">The function whose results are cached</param>
 		/// <param name="cache">The dictionary which holds the cached values</param>
 		/// <returns>A function which caches the results of <paramref name="valueFunction"/></returns>
+		[Pure]
 		public static Func<TKey, TValue> Cached<TKey, TValue>(this Func<TKey, TValue> valueFunction, IDictionary<TKey, TValue> cache)
 		{
 			Contract.Requires(valueFunction != null);
@@ -46,6 +47,7 @@ namespace Cloak
 		/// <typeparam name="TValue">The type of value associated with each key</typeparam>
 		/// <param name="valueFunction">The function whose results are cached</param>
 		/// <returns>A function which caches the results of <paramref name="valueFunction"/></returns>
+		[Pure]
 		public static Func<TKey, TValue> Cached<TKey, TValue>(this Func<TKey, TValue> valueFunction)
 		{
 			Contract.Requires(valueFunction != null);
@@ -61,6 +63,7 @@ namespace Cloak
 		/// <param name="valueFunction">The function whose results are cached</param>
 		/// <param name="keyComparer">The comparer which specifies equality among keys</param>
 		/// <returns>A function which caches the results of <paramref name="valueFunction"/></returns>
+		[Pure]
 		public static Func<TKey, TValue> Cached<TKey, TValue>(this Func<TKey, TValue> valueFunction, IEqualityComparer<TKey> keyComparer)
 		{
 			Contract.Requires(valueFunction != null);
@@ -77,6 +80,7 @@ namespace Cloak
 		/// <param name="valueFunction">The function whose results are cached</param>
 		/// <param name="cache">The dictionary which holds the cached values</param>
 		/// <returns>A function which caches the results of <paramref name="valueFunction"/></returns>
+		[Pure]
 		public static Func<TKey, TValue> CachedConcurrently<TKey, TValue>(this Func<TKey, TValue> valueFunction, IDictionary<TKey, TValue> cache)
 		{
 			Contract.Requires(valueFunction != null);
@@ -109,6 +113,7 @@ namespace Cloak
 		/// <typeparam name="TValue">The type of value associated with each key</typeparam>
 		/// <param name="valueFunction">The function whose results are cached</param>
 		/// <returns>A function which caches the results of <paramref name="valueFunction"/></returns>
+		[Pure]
 		public static Func<TKey, TValue> CachedConcurrently<TKey, TValue>(this Func<TKey, TValue> valueFunction)
 		{
 			Contract.Requires(valueFunction != null);
@@ -124,6 +129,7 @@ namespace Cloak
 		/// <param name="valueFunction">The function whose results are cached</param>
 		/// <param name="keyComparer">The comparer which specifies equality among inputs</param>
 		/// <returns>A function which caches the results of <paramref name="valueFunction"/></returns>
+		[Pure]
 		public static Func<TKey, TValue> CachedConcurrently<TKey, TValue>(this Func<TKey, TValue> valueFunction, IEqualityComparer<TKey> keyComparer)
 		{
 			Contract.Requires(valueFunction != null);

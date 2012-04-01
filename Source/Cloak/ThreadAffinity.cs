@@ -38,6 +38,7 @@ namespace Cloak
 		/// Determines if the current thread is the associated thread
 		/// </summary>
 		/// <returns>Whether the current thread is the associated thread</returns>
+		[Pure]
 		public bool Check()
 		{
 			return Thread.CurrentThread == AssociatedThread;
@@ -47,6 +48,7 @@ namespace Cloak
 		/// Throws an exception if the current thread is not the associated thread
 		/// </summary>
 		/// <exception cref="ThreadAffinityException">Thrown if the current thread is not the associated thread</exception>
+		[Pure]
 		public void Enforce()
 		{
 			if(!Check())

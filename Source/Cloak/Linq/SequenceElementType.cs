@@ -19,6 +19,7 @@ namespace Cloak.Linq
 		/// </summary>
 		/// <param name="sequenceType">The type of sequence</param>
 		/// <returns>The type of elements in the sequence</returns>
+		[Pure]
 		public static Type From(Type sequenceType)
 		{
 			Contract.Requires(sequenceType != null);

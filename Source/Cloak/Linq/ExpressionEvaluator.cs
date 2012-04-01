@@ -18,6 +18,7 @@ namespace Cloak.Linq
 		/// <param name="expression">The root of the expression tree</param>
 		/// <param name="canBeEvaluated">A function which determines whether a node can be part of a subtree which can be evaluated</param>
 		/// <returns>A new tree with independent subtrees evaluated and replaced</returns>
+		[Pure]
 		public static Expression EvaluateSubtrees(Expression expression, Func<Expression, bool> canBeEvaluated)
 		{
 			Contract.Requires(expression != null);
@@ -31,6 +32,7 @@ namespace Cloak.Linq
 		/// </summary>
 		/// <param name="expression">The root of the expression tree</param>
 		/// <returns>A new tree with independent subtrees evaluated and replaced</returns>
+		[Pure]
 		public static Expression EvaluateSubtrees(Expression expression)
 		{
 			Contract.Requires(expression != null);

@@ -16,6 +16,7 @@ namespace Cloak
 		/// </summary>
 		/// <param name="source">The sequence whose items' hash codes are combined</param>
 		/// <returns>The hash code created from the items' hash codes</returns>
+		[Pure]
 		public static int Combine(IEnumerable<object> source)
 		{
 			Contract.Requires(source != null);
@@ -28,6 +29,7 @@ namespace Cloak
 		/// </summary>
 		/// <param name="source">The sequence whose items' hash codes are combined</param>
 		/// <returns>The hash code created from the items' hash codes</returns>
+		[Pure]
 		public static int Combine(params object[] source)
 		{
 			Contract.Requires(source != null);
@@ -40,6 +42,7 @@ namespace Cloak
 		/// </summary>
 		/// <param name="source">The sequence whose items' hash codes are combined</param>
 		/// <returns>The hash code created from the items' hash codes</returns>
+		[Pure]
 		public static int Combine<T>(IEnumerable<T> source)
 		{
 			Contract.Requires(source != null);
@@ -72,6 +75,7 @@ namespace Cloak
 		/// </summary>
 		/// <param name="source">The sequence whose items' hash codes are combined</param>
 		/// <returns>The hash code created from the items' hash codes</returns>
+		[Pure]
 		public static int Combine<T>(params T[] source)
 		{
 			Contract.Requires(source != null);

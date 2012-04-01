@@ -18,6 +18,7 @@ namespace Cloak
 		/// <typeparam name="T">The type of elements in the sequence</typeparam>
 		/// <param name="source">The sequence containing the items to put in the collection</param>
 		/// <returns>A collection containing the items in the specified sequence</returns>
+		[Pure]
 		public static ObservableCollection<T> ToObservableCollection<T>(this IEnumerable<T> source)
 		{
 			Contract.Requires(source != null);
@@ -31,6 +32,7 @@ namespace Cloak
 		/// <typeparam name="T">The type of elements in the sequence</typeparam>
 		/// <param name="source">The sequence containing the items to put in the collection</param>
 		/// <returns>A read-only collection containing the items in the specified sequence</returns>
+		[Pure]
 		public static ReadOnlyCollection<T> ToReadOnlyCollection<T>(this IEnumerable<T> source)
 		{
 			Contract.Requires(source != null);
@@ -44,6 +46,7 @@ namespace Cloak
 		/// <typeparam name="T">The type of elements in the sequence</typeparam>
 		/// <param name="source">The sequence containing the items to put in the collection</param>
 		/// <returns>A read-only collection containing the items in the specified sequence</returns>
+		[Pure]
 		public static ReadOnlyObservableCollection<T> ToReadOnlyObservableCollection<T>(this ObservableCollection<T> source)
 		{
 			Contract.Requires(source != null);
@@ -57,6 +60,7 @@ namespace Cloak
 		/// <typeparam name="T">The type of elements in the sequence</typeparam>
 		/// <param name="source">The sequence containing the items to put in the collection</param>
 		/// <returns>A read-only collection containing the items in the specified sequence</returns>
+		[Pure]
 		public static ReadOnlyObservableCollection<T> ToReadOnlyObservableCollection<T>(this IEnumerable<T> source)
 		{
 			Contract.Requires(source != null);
@@ -70,6 +74,7 @@ namespace Cloak
 		/// <typeparam name="T">The type of elements in the sequence</typeparam>
 		/// <param name="source">The sequence containing the items to put in the collection</param>
 		/// <returns>A read-only collection containing the items in the specified sequence</returns>
+		[Pure]
 		public static PubliclyReadOnlyCollection<T> ToPubliclyReadOnlyCollection<T>(this IList<T> source)
 		{
 			Contract.Requires(source != null);
@@ -83,6 +88,7 @@ namespace Cloak
 		/// <typeparam name="T">The type of elements in the sequence</typeparam>
 		/// <param name="source">The sequence containing the items to put in the collection</param>
 		/// <returns>A publicly read-only collection containing the items in the specified sequence</returns>
+		[Pure]
 		public static PubliclyReadOnlyCollection<T> ToPubliclyReadOnlyCollection<T>(this IEnumerable<T> source)
 		{
 			Contract.Requires(source != null);
@@ -96,6 +102,7 @@ namespace Cloak
 		/// <typeparam name="T">The type of elements in the sequence</typeparam>
 		/// <param name="collection">The collection in which to put the items</param>
 		/// <param name="items">The items to put in the collection</param>
+		[Pure]
 		public static void AddRange<T>(this ObservableCollection<T> collection, IEnumerable<T> items)
 		{
 			Contract.Requires(collection != null);

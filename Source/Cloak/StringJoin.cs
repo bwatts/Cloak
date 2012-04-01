@@ -17,6 +17,7 @@ namespace Cloak
 		/// <param name="source">The sequence of text whose items are joined</param>
 		/// <param name="separator">The text which appears between each item</param>
 		/// <returns>Text consisting of the elements of <paramref name="source"/> interspersed with <paramref name="separator"/></returns>
+		[Pure]
 		public static string Join(this IEnumerable<string> source, string separator)
 		{
 			Contract.Requires(source != null);
