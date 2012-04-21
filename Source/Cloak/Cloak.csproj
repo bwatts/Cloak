@@ -112,6 +112,12 @@
     <Compile Include="PubliclyReadOnlyCollection.cs" />
     <Compile Include="Reflection\AttributeSelection.cs" />
     <Compile Include="Reflection\GenericMethodBase.cs" />
+    <Compile Include="Reflection\Reflect.cs" />
+    <Compile Include="Reflection\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Reflection\TypeDefaultValue.cs" />
     <Compile Include="Reflection\TypeNullability.cs" />
     <Compile Include="StringJoin.cs" />
@@ -125,6 +131,10 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Linq\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reflection\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
