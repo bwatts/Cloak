@@ -454,7 +454,6 @@ namespace Cloak.Reflection
 		/// <summary>
 		/// Gets the property accessed by the specified lambda expression
 		/// </summary>
-		/// <typeparam name="T">The type of object on which to access the property</typeparam>
 		/// <param name="expression">The expression which accesses the property</param>
 		/// <returns>The property accessed by the specified expression</returns>
 		public static PropertyInfo Property(Expression<Func<object>> expression)
@@ -709,13 +708,15 @@ namespace Cloak.Reflection
 		}
 		#endregion
 
-		private static TInfo GetInfo<TBody, TInfo>(LambdaExpression expression, Func<TBody, TInfo> getInfo) where TBody : Expression where TInfo : MemberInfo
+		private static TInfo GetInfo<TBody, TInfo>(LambdaExpression lambda, Func<TBody, TInfo> getInfo)
+			where TBody : Expression
+			where TInfo : MemberInfo
 		{
-			var body = expression.Body as TBody;
+			var body = lambda.Body as TBody;
 
 			if(body == null)
 			{
-				throw new ArgumentException(Resources.InvalidLambdaExpressionBody.FormatInvariant(typeof(TBody), expression));
+				throw new ArgumentException(Resources.InvalidLambdaExpressionBody.FormatInvariant(typeof(TBody), lambda));
 			}
 
 			return getInfo(body);
@@ -726,19 +727,21 @@ namespace Cloak.Reflection
 			return wrapper.Method;
 		}
 
-		private static MethodInfo GetMethod(LambdaExpression expression)
+		private static MethodInfo GetMethod(LambdaExpression lambda)
 		{
-			return GetInfo(expression, (MethodCallExpression call) => call.Method);
+			return GetInfo(lambda, (MethodCallExpression call) => call.Method);
 		}
 
-		private static MemberInfo GetMember(LambdaExpression expression)
+		private static MemberInfo GetMember(LambdaExpression lambda)
 		{
-			if(expression.Body.NodeType == ExpressionType.Convert && expression.Body.Type == typeof(object))
+			if(lambda.Body.NodeType == ExpressionType.Convert && lambda.Body.Type == typeof(object))
 			{
-				expression = ((UnaryExpression) expression.Body).Operand;
+				var memberAccess = ((UnaryExpression) lambda.Body).Operand;
+
+				lambda = Expression.Lambda(memberAccess, lambda.Parameters);
 			}
 
-			return GetInfo(expression, (MemberExpression access) => access.Member);
+			return GetInfo(lambda, (MemberExpression access) => access.Member);
 		}
 
 		private static TInfo GetMember<TInfo>(LambdaExpression expression) where TInfo : MemberInfo
