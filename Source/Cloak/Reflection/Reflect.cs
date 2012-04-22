@@ -431,7 +431,7 @@ namespace Cloak.Reflection
 		/// </summary>
 		/// <param name="expression">The expression which accesses the property or field</param>
 		/// <returns>The property or field accessed by the specified expression</returns>
-		public static MemberInfo Member<TResult>(Expression<Func<TResult>> expression)
+		public static MemberInfo Member(Expression<Func<object>> expression)
 		{
 			Contract.Requires(expression != null);
 
@@ -441,9 +441,10 @@ namespace Cloak.Reflection
 		/// <summary>
 		/// Gets the property or field accessed by the specified lambda expression
 		/// </summary>
+		/// <typeparam name="T">The type of object on which to access the member</typeparam>
 		/// <param name="expression">The expression which accesses the property or field</param>
 		/// <returns>The property or field accessed by the specified expression</returns>
-		public static MemberInfo Member<T, TResult>(Expression<Func<T, TResult>> expression)
+		public static MemberInfo Member<T>(Expression<Func<T, object>> expression)
 		{
 			Contract.Requires(expression != null);
 
@@ -453,9 +454,10 @@ namespace Cloak.Reflection
 		/// <summary>
 		/// Gets the property accessed by the specified lambda expression
 		/// </summary>
+		/// <typeparam name="T">The type of object on which to access the property</typeparam>
 		/// <param name="expression">The expression which accesses the property</param>
 		/// <returns>The property accessed by the specified expression</returns>
-		public static PropertyInfo Property<TResult>(Expression<Func<TResult>> expression)
+		public static PropertyInfo Property(Expression<Func<object>> expression)
 		{
 			Contract.Requires(expression != null);
 
@@ -465,9 +467,10 @@ namespace Cloak.Reflection
 		/// <summary>
 		/// Gets the property accessed by the specified lambda expression
 		/// </summary>
+		/// <typeparam name="T">The type of object on which to access the property</typeparam>
 		/// <param name="expression">The expression which accesses the property</param>
 		/// <returns>The property accessed by the specified expression</returns>
-		public static PropertyInfo Property<T, TResult>(Expression<Func<T, TResult>> expression)
+		public static PropertyInfo Property<T>(Expression<Func<T, object>> expression)
 		{
 			Contract.Requires(expression != null);
 
@@ -479,7 +482,7 @@ namespace Cloak.Reflection
 		/// </summary>
 		/// <param name="expression">The expression which accesses the field</param>
 		/// <returns>The field accessed by the specified expression</returns>
-		public static FieldInfo Field<TResult>(Expression<Func<TResult>> expression)
+		public static FieldInfo Field(Expression<Func<object>> expression)
 		{
 			Contract.Requires(expression != null);
 
@@ -489,9 +492,10 @@ namespace Cloak.Reflection
 		/// <summary>
 		/// Gets the field accessed by the specified lambda expression
 		/// </summary>
+		/// <typeparam name="T">The type of object on which to access the field</typeparam>
 		/// <param name="expression">The expression which accesses the field</param>
 		/// <returns>The field accessed by the specified expression</returns>
-		public static FieldInfo Field<T, TResult>(Expression<Func<T, TResult>> expression)
+		public static FieldInfo Field<T>(Expression<Func<T, object>> expression)
 		{
 			Contract.Requires(expression != null);
 
@@ -729,6 +733,11 @@ namespace Cloak.Reflection
 
 		private static MemberInfo GetMember(LambdaExpression expression)
 		{
+			if(expression.Body.NodeType == ExpressionType.Convert && expression.Body.Type == typeof(object))
+			{
+				expression = ((UnaryExpression) expression.Body).Operand;
+			}
+
 			return GetInfo(expression, (MemberExpression access) => access.Member);
 		}
 
