@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics.Contracts;
 using System.Globalization;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace Cloak
 	/// <summary>
 	/// Formats text using <see cref="IFormatProvider"/>, <see cref="CultureInfo.CurrentCulture"/>, and <see cref="CultureInfo.InvariantCulture"/>
 	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
 	public static class GlobalizedFormatting
 	{
 		/// <summary>

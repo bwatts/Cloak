@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace Cloak.Linq
 	/// <summary>
 	/// Extends sequences with the ability to select elements at even or odd positions
 	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
 	public static class AlternatingSelection
 	{
 		/// <summary>

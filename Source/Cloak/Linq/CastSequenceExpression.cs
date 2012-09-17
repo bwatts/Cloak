@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Linq.Expressions;
@@ -10,6 +11,7 @@ namespace Cloak.Linq
 	/// <summary>
 	/// Gets <see cref="MethodCallExpression"/> objects representing invocations of the <see cref="Enumerable.Cast"/> method
 	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
 	public static class CastSequenceExpression
 	{
 		/// <summary>

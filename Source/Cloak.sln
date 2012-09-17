@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloak", "Cloak\Cloak.csproj
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{91B3D702-0DEC-4EB0-B129-73F26AE9EFEB}"
 	ProjectSection(SolutionItems) = preProject
-		SolutionAssemblyInfo.cs = SolutionAssemblyInfo.cs
+		CloakAssemblyInfo.cs = CloakAssemblyInfo.cs
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloak.Autofac", "Cloak.Autofac\Cloak.Autofac.csproj", "{96B357D1-842F-48E6-9139-BB47495BD97F}"

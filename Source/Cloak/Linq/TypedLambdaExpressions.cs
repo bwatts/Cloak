@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Linq.Expressions;
@@ -10,6 +11,7 @@ namespace Cloak.Linq
 	/// <summary>
 	/// Extends <see cref="LambdaExpression"/> objects with the ability to create strongly-typed lambda expressions
 	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
 	public static class TypedLambdaExpressions
 	{
 		/// <summary>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Reflection;
@@ -10,6 +11,7 @@ namespace Cloak.Reflection
 	/// <summary>
 	/// Creates generic methods from <see cref="MethodBase"/> objects
 	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
 	public static class GenericMethodBase
 	{
 		/// <summary>

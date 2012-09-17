@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace Cloak.Reflection
 	/// <summary>
 	/// Determines if types can be assigned null values
 	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
 	public static class TypeNullability
 	{
 		/// <summary>

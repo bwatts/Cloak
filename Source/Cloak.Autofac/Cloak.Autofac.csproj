@@ -93,8 +93,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-		<Compile Include="..\SolutionAssemblyInfo.cs">
-      <Link>Properties\SolutionAssemblyInfo.cs</Link>
+    <Compile Include="..\CloakAssemblyInfo.cs">
+      <Link>Properties\CloakAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="ApplicationComposition.cs" />
     <Compile Include="BuilderModule.cs" />

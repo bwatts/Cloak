@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Linq.Expressions;
@@ -12,6 +13,7 @@ namespace Cloak.Linq
 	/// <summary>
 	///	Gets the types of elements in sequences
 	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
 	public static class SequenceElementType
 	{
 		/// <summary>

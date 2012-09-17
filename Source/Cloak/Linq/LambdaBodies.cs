@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Linq.Expressions;
@@ -11,6 +12,7 @@ namespace Cloak.Linq
 	/// <summary>
 	/// Extends lambda expressions with the ability to get the members and methods referenced within them
 	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
 	public static class LambdaBodies
 	{
 		/// <summary>

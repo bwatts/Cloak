@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace Cloak
 	/// <summary>
 	/// Extends sequences of text with the ability to join the elements using a separator
 	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
 	public static class StringJoin
 	{
 		/// <summary>

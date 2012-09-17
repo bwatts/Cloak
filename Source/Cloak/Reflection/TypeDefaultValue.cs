@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace Cloak.Reflection
 	/// <summary>
 	/// Gets the default value of <see cref="Type"/> objects
 	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
 	public static class TypeDefaultValue
 	{
 		/// <summary>
