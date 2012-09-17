@@ -68,7 +68,6 @@ namespace Cloak.Xunit
 		/// Asserts on the outcome of a scenario
 		/// </summary>
 		/// <typeparam name="TResult">The type of result of the action</typeparam>
-		/// <param name="context">The context arranged for the scenario</param>
 		/// <returns>An API for asserting on the outcome of the action</returns>
 		public sealed class ThenBuilder<TResult>
 		{
