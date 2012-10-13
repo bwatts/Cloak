@@ -71,34 +71,6 @@ namespace Cloak
 		}
 
 		/// <summary>
-		/// Creates an <see cref="PubliclyReadOnlyCollection{T}"/> from the specified sequence
-		/// </summary>
-		/// <typeparam name="T">The type of elements in the sequence</typeparam>
-		/// <param name="source">The sequence containing the items to put in the collection</param>
-		/// <returns>A read-only collection containing the items in the specified sequence</returns>
-		[Pure]
-		public static PubliclyReadOnlyCollection<T> ToPubliclyReadOnlyCollection<T>(this IList<T> source)
-		{
-			Contract.Requires(source != null);
-
-			return new PubliclyReadOnlyCollection<T>(source.ToList());
-		}
-
-		/// <summary>
-		/// Creates an <see cref="PubliclyReadOnlyCollection{T}"/> from the specified sequence
-		/// </summary>
-		/// <typeparam name="T">The type of elements in the sequence</typeparam>
-		/// <param name="source">The sequence containing the items to put in the collection</param>
-		/// <returns>A publicly read-only collection containing the items in the specified sequence</returns>
-		[Pure]
-		public static PubliclyReadOnlyCollection<T> ToPubliclyReadOnlyCollection<T>(this IEnumerable<T> source)
-		{
-			Contract.Requires(source != null);
-
-			return new PubliclyReadOnlyCollection<T>(source.ToList());
-		}
-
-		/// <summary>
 		/// Adds the elements of the specified sequence to the collection
 		/// </summary>
 		/// <typeparam name="T">The type of elements in the sequence</typeparam>

@@ -14,6 +14,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloak.NUnit", "Cloak.NUnit\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloak.Xunit", "Cloak.Xunit\Cloak.Xunit.csproj", "{259D88AE-C5F6-4C67-B87F-FD14ACABCD67}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloak.Http", "Cloak.Http\Cloak.Http.csproj", "{43F24F70-06F1-4834-B241-A8CEEC01D87D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloak.Http.Server", "Cloak.Http.Server\Cloak.Http.Server.csproj", "{3782CF73-A8A7-4FE3-BBBD-75492B77DD76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +40,14 @@ Global
 		{259D88AE-C5F6-4C67-B87F-FD14ACABCD67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{259D88AE-C5F6-4C67-B87F-FD14ACABCD67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{259D88AE-C5F6-4C67-B87F-FD14ACABCD67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43F24F70-06F1-4834-B241-A8CEEC01D87D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43F24F70-06F1-4834-B241-A8CEEC01D87D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43F24F70-06F1-4834-B241-A8CEEC01D87D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43F24F70-06F1-4834-B241-A8CEEC01D87D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3782CF73-A8A7-4FE3-BBBD-75492B77DD76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3782CF73-A8A7-4FE3-BBBD-75492B77DD76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3782CF73-A8A7-4FE3-BBBD-75492B77DD76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3782CF73-A8A7-4FE3-BBBD-75492B77DD76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

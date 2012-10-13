@@ -117,7 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ElementIndexedPath" xml:space="preserve">
+    <value>/{0}[{1}]</value>
+  </data>
+  <data name="ElementNonIndexedPath" xml:space="preserve">
+    <value>/{0}</value>
+  </data>
+  <data name="ExpandedName" xml:space="preserve">
+    <value>{0}:{1}</value>
+  </data>
+  <data name="ExpectedAttributeName" xml:space="preserve">
+    <value>Expect attribute name '{0}' at '{1}'</value>
+  </data>
+  <data name="ExpectedChildElement" xml:space="preserve">
+    <value>Expected child element '{0}' at '{1}'</value>
+  </data>
+  <data name="ExpectedElementName" xml:space="preserve">
+    <value>Expect element name '{0}' at '{1}'</value>
+  </data>
+  <data name="ExpectedNonEmptyAttribute" xml:space="preserve">
+    <value>Expected non-empty attribute '{0}' at '{1}'</value>
+  </data>
+  <data name="ExpressionDoesNotCallMethodFormat" xml:space="preserve">
+    <value>Expression does not call a method: {0}</value>
+  </data>
+  <data name="ExpressionDoesNotSelectMemberFormat" xml:space="preserve">
+    <value>Expression does not select a member: {0}</value>
+  </data>
   <data name="InvalidLambdaExpressionBody" xml:space="preserve">
     <value>Expression body must be a {0}: {1}</value>
+  </data>
+  <data name="QualifiedAttributePath" xml:space="preserve">
+    <value>{0}@{1}</value>
   </data>
 </root>

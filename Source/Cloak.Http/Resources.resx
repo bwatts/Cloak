@@ -117,10 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ExpressionDoesNotCallMethodFormat" xml:space="preserve">
-    <value>Expression does not call a method: {0}</value>
+  <data name="NoMediaFormatCanReadType" xml:space="preserve">
+    <value>No media format can read type {0}</value>
   </data>
-  <data name="ExpressionDoesNotSelectMemberFormat" xml:space="preserve">
-    <value>Expression does not select a member: {0}</value>
+  <data name="NoMediaFormatCanWriteType" xml:space="preserve">
+    <value>No media format can write type {0}</value>
+  </data>
+  <data name="StreamIsInvalidJsonToken" xml:space="preserve">
+    <value>Stream is an invalid JSON token</value>
+  </data>
+  <data name="StreamIsInvalidXmlDocument" xml:space="preserve">
+    <value>Stream is an invalid XML document</value>
+  </data>
+  <data name="UnableToReadContentFourTypes" xml:space="preserve">
+    <value>Unable to read content as any of the specified types: {0}, {1}, {2}, {3}</value>
+  </data>
+  <data name="UnableToReadContentThreeTypes" xml:space="preserve">
+    <value>Unable to read content as any of the specified types: {0}, {1}, {2}</value>
+  </data>
+  <data name="UnableToReadContentTwoTypes" xml:space="preserve">
+    <value>Unable to read content as any of the specified types: {0}, {1}</value>
+  </data>
+  <data name="UnableToReadMedia" xml:space="preserve">
+    <value>Unable to read media of type {0}</value>
+  </data>
+  <data name="UnableToReadMediaNegotiatedFrom" xml:space="preserve">
+    <value>Unable to read media of type {0} negotiated from media type "{1}"</value>
   </data>
 </root>
