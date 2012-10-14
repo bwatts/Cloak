@@ -97,7 +97,7 @@ namespace Cloak.Http.Media
 				Name = "";
 				CharSet = "";
 				Parameters = new List<NameValueHeaderValue>().AsReadOnly();
-				MediaPath = MediaPath.Unspecified;
+				Path = MediaPath.Unspecified;
 			}
 			else
 			{
@@ -118,7 +118,7 @@ namespace Cloak.Http.Media
 			CharSet = headerValue.CharSet ?? "";
 			Parameters = headerValue.Parameters.ToList().AsReadOnly();
 
-			MediaPath = new MediaPath(Name);
+			Path = new MediaPath(Name);
 		}
 
 		public string Value { get; private set; }
@@ -129,7 +129,7 @@ namespace Cloak.Http.Media
 
 		public ReadOnlyCollection<NameValueHeaderValue> Parameters { get; private set; }
 
-		public MediaPath MediaPath { get; private set; }
+		public MediaPath Path { get; private set; }
 
 		public MediaTypeHeaderValue ToHeaderValue()
 		{
