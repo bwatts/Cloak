@@ -145,11 +145,11 @@ namespace Cloak.Http
 			return isParameter;
 		}
 
-		public Uri ToAbsoluteUrl(Uri baseUrl)
+		public Uri ToAbsoluteUri(Uri baseUri)
 		{
-			Contract.Requires(baseUrl != null);
+			Contract.Requires(baseUri != null);
 
-			return new Uri(baseUrl, ToString());
+			return new Uri(baseUri, ToString());
 		}
 	}
 }

@@ -10,13 +10,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{91B3D7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloak.Autofac", "Cloak.Autofac\Cloak.Autofac.csproj", "{96B357D1-842F-48E6-9139-BB47495BD97F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloak.NUnit", "Cloak.NUnit\Cloak.NUnit.csproj", "{533A8713-65BB-4D13-9C49-001C8F3FBCCD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloak.Xunit", "Cloak.Xunit\Cloak.Xunit.csproj", "{259D88AE-C5F6-4C67-B87F-FD14ACABCD67}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloak.Http", "Cloak.Http\Cloak.Http.csproj", "{43F24F70-06F1-4834-B241-A8CEEC01D87D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloak.Http.Server", "Cloak.Http.Server\Cloak.Http.Server.csproj", "{3782CF73-A8A7-4FE3-BBBD-75492B77DD76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloak.Http.Examples", "Cloak.Http.Examples\Cloak.Http.Examples.csproj", "{D683C34B-0619-4B90-BF4C-4FB702CABCEE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{BD0D1B83-55C6-44CC-B0E0-20B9E7FF5AC3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,14 +32,6 @@ Global
 		{96B357D1-842F-48E6-9139-BB47495BD97F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96B357D1-842F-48E6-9139-BB47495BD97F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96B357D1-842F-48E6-9139-BB47495BD97F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{533A8713-65BB-4D13-9C49-001C8F3FBCCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{533A8713-65BB-4D13-9C49-001C8F3FBCCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{533A8713-65BB-4D13-9C49-001C8F3FBCCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{533A8713-65BB-4D13-9C49-001C8F3FBCCD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{259D88AE-C5F6-4C67-B87F-FD14ACABCD67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{259D88AE-C5F6-4C67-B87F-FD14ACABCD67}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{259D88AE-C5F6-4C67-B87F-FD14ACABCD67}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{259D88AE-C5F6-4C67-B87F-FD14ACABCD67}.Release|Any CPU.Build.0 = Release|Any CPU
 		{43F24F70-06F1-4834-B241-A8CEEC01D87D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{43F24F70-06F1-4834-B241-A8CEEC01D87D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43F24F70-06F1-4834-B241-A8CEEC01D87D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -48,8 +40,15 @@ Global
 		{3782CF73-A8A7-4FE3-BBBD-75492B77DD76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3782CF73-A8A7-4FE3-BBBD-75492B77DD76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3782CF73-A8A7-4FE3-BBBD-75492B77DD76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D683C34B-0619-4B90-BF4C-4FB702CABCEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D683C34B-0619-4B90-BF4C-4FB702CABCEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D683C34B-0619-4B90-BF4C-4FB702CABCEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D683C34B-0619-4B90-BF4C-4FB702CABCEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D683C34B-0619-4B90-BF4C-4FB702CABCEE} = {BD0D1B83-55C6-44CC-B0E0-20B9E7FF5AC3}
 	EndGlobalSection
 EndGlobal
