@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Cloak.Http.Media;
 
-namespace Cloak.Http.Calls
+namespace Cloak.Http
 {
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public static class ApiClientCalls

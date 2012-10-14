@@ -4,7 +4,6 @@ using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Cloak.Http.Calls;
 using Cloak.Http.Media;
 
 namespace Cloak.Http

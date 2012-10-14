@@ -115,18 +115,18 @@
     <Compile Include="..\CloakAssemblyInfo.cs">
       <Link>Properties\CloakAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Calls\ApiCall.cs" />
+    <Compile Include="ApiCall.cs" />
     <Compile Include="ApiClient.cs" />
-    <Compile Include="Calls\ApiClientCalls.cs" />
+    <Compile Include="ApiClientCalls.cs" />
     <Compile Include="ApiError.cs" />
     <Compile Include="ApiException.cs" />
-    <Compile Include="Calls\HttpCall.cs" />
-    <Compile Include="Calls\HttpCallWithContent.cs" />
-    <Compile Include="Calls\IHttpCall.cs" />
+    <Compile Include="HttpCall.cs" />
+    <Compile Include="HttpCallWithContent.cs" />
+    <Compile Include="IHttpCall.cs" />
     <Compile Include="Media\AcceptedTypes.cs" />
     <Compile Include="Media\HttpClientAcceptedTypes.cs" />
     <Compile Include="Media\HttpContentReading.cs" />
-    <Compile Include="Media\JsonMediaFormat.cs" />
+    <Compile Include="Media\JsonFormat.cs" />
     <Compile Include="Media\MediaFormat.cs" />
     <Compile Include="Media\MediaFormatException.cs" />
     <Compile Include="Media\MediaFormats.cs" />
@@ -138,7 +138,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Media\MediaPath.cs" />
-    <Compile Include="Media\XmlMediaFormat.cs" />
+    <Compile Include="Media\XmlFormat.cs" />
     <Compile Include="UriPath.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -10,15 +10,15 @@ using System.Xml.Linq;
 
 namespace Cloak.Http.Media
 {
-	public abstract class XmlMediaFormat<TMedia> : MediaFormat<TMedia, XElement>
+	public abstract class XmlFormat<TMedia> : MediaFormat<TMedia, XElement>
 	{
-		protected XmlMediaFormat() : base()
+		protected XmlFormat() : base()
 		{}
 
-		protected XmlMediaFormat(MediaType mediaType) : base(mediaType)
+		protected XmlFormat(MediaType mediaType) : base(mediaType)
 		{}
 
-		protected XmlMediaFormat(params MediaType[] mediaTypes) : base(mediaTypes)
+		protected XmlFormat(params MediaType[] mediaTypes) : base(mediaTypes)
 		{}
 
 		protected override void WriteRepresentation(XElement representation, Stream stream, HttpContent content)

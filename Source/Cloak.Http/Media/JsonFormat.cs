@@ -14,15 +14,15 @@ using Newtonsoft.Json.Linq;
 
 namespace Cloak.Http.Media
 {
-	public abstract class JsonMediaFormat<TMedia> : MediaFormat<TMedia, JToken>
+	public abstract class JsonFormat<TMedia> : MediaFormat<TMedia, JToken>
 	{
-		protected JsonMediaFormat() : base()
+		protected JsonFormat() : base()
 		{}
 
-		protected JsonMediaFormat(MediaType mediaType) : base(mediaType)
+		protected JsonFormat(MediaType mediaType) : base(mediaType)
 		{}
 
-		protected JsonMediaFormat(params MediaType[] mediaTypes) : base(mediaTypes)
+		protected JsonFormat(params MediaType[] mediaTypes) : base(mediaTypes)
 		{}
 
 		protected override void WriteRepresentation(JToken representation, Stream stream, HttpContent content)
