@@ -11,10 +11,8 @@ namespace Cloak.Http
 	public class RootUriPath
 	{
 		[Scenario]
-		public void Get()
+		public void Get(UriPath root)
 		{
-			var root = default(UriPath);
-
 			"When getting the root URI path".When(() => root = UriPath.Root);
 
 			"Its base path is null".Then(() => root.BasePath.Should().Be(null));
@@ -22,10 +20,8 @@ namespace Cloak.Http
 		}
 
 		[Scenario]
-		public void ThenSeparator()
+		public void ThenSeparator(UriPath path)
 		{
-			var path = default(UriPath);
-
 			"When getting the root URI path followed by a separator".When(() => path = UriPath.Root.Then(UriPath.Separator));
 
 			"Its base path is the root".Then(() => path.BasePath.Should().Be(UriPath.Root));
@@ -33,10 +29,8 @@ namespace Cloak.Http
 		}
 
 		[Scenario]
-		public void ThenText()
+		public void ThenText(UriPath path)
 		{
-			var path = default(UriPath);
-
 			"When getting the root URI path followed by text".When(() => path = UriPath.Root.Then("text"));
 
 			"Its base path is the root".Then(() => path.BasePath.Should().Be(UriPath.Root));
@@ -44,10 +38,8 @@ namespace Cloak.Http
 		}
 
 		[Scenario]
-		public void ThenParameter()
+		public void ThenParameter(UriPath path)
 		{
-			var path = default(UriPath);
-
 			"When getting the root URI path follow by a parameter".When(() => path = UriPath.Root.ThenParameter("p"));
 
 			"Its base path is the root".Then(() => path.BasePath.Should().Be(UriPath.Root));
@@ -55,10 +47,8 @@ namespace Cloak.Http
 		}
 
 		[Scenario]
-		public void ThenObject()
+		public void ThenObject(UriPath path)
 		{
-			var path = default(UriPath);
-
 			"When getting the root URI path followed by an object".When(() => path = UriPath.Root.Then(1));
 
 			"Its base path is the root".Then(() => path.BasePath.Should().Be(UriPath.Root));
@@ -66,11 +56,8 @@ namespace Cloak.Http
 		}
 
 		[Scenario]
-		public void ThenFormattedObject()
+		public void ThenFormattedObject(NumberFormatInfo formatInfo, UriPath path)
 		{
-			var formatInfo = default(NumberFormatInfo);
-			var path = default(UriPath);
-
 			"Given a numeric format which specifies a custom negative operator".Given(() =>
 			{
 				formatInfo = (NumberFormatInfo) NumberFormatInfo.CurrentInfo.Clone();

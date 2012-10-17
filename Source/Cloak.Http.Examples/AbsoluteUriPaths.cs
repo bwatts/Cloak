@@ -11,11 +11,8 @@ namespace Cloak.Http
 	public class AbsoluteUriPaths
 	{
 		[Scenario]
-		public void Separator()
+		public void Separator(Uri baseUri, Uri absoluteUri)
 		{
-			var baseUri = default(Uri);
-			var absoluteUri = default(Uri);
-
 			"Given a base URI".Given(() => baseUri = new Uri("http://localhost"));
 
 			"When getting an absolute URI from the root followed by a separator".When(() => absoluteUri = UriPath.Root.Then(UriPath.Separator).ToAbsoluteUri(baseUri));
@@ -24,11 +21,8 @@ namespace Cloak.Http
 		}
 
 		[Scenario]
-		public void Text()
+		public void Text(Uri baseUri, Uri absoluteUri)
 		{
-			var baseUri = default(Uri);
-			var absoluteUri = default(Uri);
-
 			"Given a base URI".Given(() => baseUri = new Uri("http://localhost"));
 
 			"When getting an absolute URI from the root followed by text".When(() => absoluteUri = UriPath.Root.Then("text").ToAbsoluteUri(baseUri));
@@ -37,11 +31,8 @@ namespace Cloak.Http
 		}
 
 		[Scenario]
-		public void Paramter()
+		public void Paramter(Uri baseUri, Uri absoluteUri)
 		{
-			var baseUri = default(Uri);
-			var absoluteUri = default(Uri);
-
 			"Given a base URI".Given(() => baseUri = new Uri("http://localhost"));
 
 			"When getting an absolute URI from the root followed by a parameter".When(() => absoluteUri = UriPath.Root.ThenParameter("p").ToAbsoluteUri(baseUri));
@@ -50,11 +41,8 @@ namespace Cloak.Http
 		}
 
 		[Scenario]
-		public void Object()
+		public void Object(Uri baseUri, Uri absoluteUri)
 		{
-			var baseUri = default(Uri);
-			var absoluteUri = default(Uri);
-
 			"Given a base URI".Given(() => baseUri = new Uri("http://localhost"));
 
 			"When getting an absolute URI from the root followed by an object".When(() => absoluteUri = UriPath.Root.Then(1).ToAbsoluteUri(baseUri));
@@ -63,12 +51,8 @@ namespace Cloak.Http
 		}
 
 		[Scenario]
-		public void FormattedObject()
+		public void FormattedObject(NumberFormatInfo formatInfo, Uri baseUri, Uri absoluteUri)
 		{
-			var formatInfo = default(NumberFormatInfo);
-			var baseUri = default(Uri);
-			var absoluteUri = default(Uri);
-
 			"Given a base URI".Given(() => baseUri = new Uri("http://localhost"));
 			"And a numeric format which specifies a custom negative operator".And(() =>
 			{

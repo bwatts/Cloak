@@ -11,10 +11,8 @@ namespace Cloak.Http.Media
 	public class MediaPaths
 	{
 		[Scenario]
-		public void Create()
+		public void Create(MediaPath path)
 		{
-			var path = default(MediaPath);
-
 			"When creating a media path".When(() => path = new MediaPath("application/vnd.grasp.test+html"));
 
 			"It has the specified value".Then(() => path.Value.Should().Be("vnd.grasp.test+html"));
@@ -24,10 +22,8 @@ namespace Cloak.Http.Media
 		}
 
 		[Scenario]
-		public void CreateWithoutMedia()
+		public void CreateWithoutMedia(MediaPath path)
 		{
-			var path = default(MediaPath);
-
 			"When creating a media path without media".When(() => path = new MediaPath("application/vnd.grasp+html"));
 
 			"It has the specified value".Then(() => path.Value.Should().Be("vnd.grasp+html"));
@@ -37,10 +33,8 @@ namespace Cloak.Http.Media
 		}
 
 		[Scenario]
-		public void CreateWithoutFormat()
+		public void CreateWithoutFormat(MediaPath path)
 		{
-			var path = default(MediaPath);
-
 			"When creating a media path without a format".When(() => path = new MediaPath("application/vnd.grasp.test"));
 
 			"It has an empty value".Then(() => path.Value.Should().Be(""));
@@ -50,10 +44,8 @@ namespace Cloak.Http.Media
 		}
 
 		[Scenario]
-		public void CreateWithoutMediaOrFormat()
+		public void CreateWithoutMediaOrFormat(MediaPath path)
 		{
-			var path = default(MediaPath);
-
 			"When creating a media path without media or format".When(() => path = new MediaPath("application/vnd.grasp"));
 
 			"It has an empty value".Then(() => path.Value.Should().Be(""));
@@ -63,10 +55,8 @@ namespace Cloak.Http.Media
 		}
 
 		[Scenario]
-		public void CreateWithoutVendor()
+		public void CreateWithoutVendor(MediaPath path)
 		{
-			var path = default(MediaPath);
-
 			"When creating a media path a vendor".When(() => path = new MediaPath("application/json"));
 
 			"It has an empty value".Then(() => path.Value.Should().Be(""));

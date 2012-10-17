@@ -11,10 +11,8 @@ namespace Cloak.Http.Media
 	public class MediaTypes
 	{
 		[Scenario]
-		public void CreateWithVendor()
+		public void CreateWithVendor(MediaType mediaType)
 		{
-			var mediaType = default(MediaType);
-
 			"When creating a media type with a vendor".When(() => mediaType = new MediaType("application/vnd.grasp.test+html"));
 
 			"It has the specified media path".Then(() => mediaType.Path.Value.Should().Be("vnd.grasp.test+html"));
@@ -24,10 +22,8 @@ namespace Cloak.Http.Media
 		}
 
 		[Scenario]
-		public void CreateWithoutVendor()
+		public void CreateWithoutVendor(MediaType mediaType)
 		{
-			var mediaType = default(MediaType);
-
 			"When creating a media type with a vendor".When(() => mediaType = new MediaType("application/json"));
 
 			"It has an unspecified media path".Then(() => mediaType.Path.Should().Be(MediaPath.Unspecified));
