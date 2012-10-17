@@ -96,7 +96,7 @@
     <Compile Include="..\CloakAssemblyInfo.cs">
       <Link>Properties\CloakAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="ApplicationComposition.cs" />
+    <Compile Include="CompositionRoot.cs" />
     <Compile Include="BuilderModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

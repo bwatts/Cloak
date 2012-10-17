@@ -11,7 +11,7 @@ namespace Cloak.Autofac
 	/// <summary>
 	/// The composition of an application composed with an Autofac container
 	/// </summary>
-	public sealed class ApplicationComposition : IDisposable
+	public sealed class CompositionRoot : IDisposable
 	{
 		private readonly IModule _module;
 
@@ -19,7 +19,7 @@ namespace Cloak.Autofac
 		/// Initializes an application composition with the specified module
 		/// </summary>
 		/// <param name="module">The module which provides the application's composition</param>
-		public ApplicationComposition(IModule module)
+		public CompositionRoot(IModule module)
 		{
 			Contract.Requires(module != null);
 
@@ -63,7 +63,7 @@ namespace Cloak.Autofac
 	/// The composition of an application composed with an Autofac container
 	/// </summary>
 	/// <typeparam name="TModule">The type of module which configures the container</typeparam>
-	public sealed class ApplicationComposition<TModule> : IDisposable where TModule : IModule, new()
+	public sealed class CompositionRoot<TModule> : IDisposable where TModule : IModule, new()
 	{
 		#region IDisposable
 		/// <summary>
