@@ -10,9 +10,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Cloak</RootNamespace>
     <AssemblyName>Cloak</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <CodeContractsAssemblyMode>0</CodeContractsAssemblyMode>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +45,7 @@
     <CodeContractsCacheAnalysisResults>False</CodeContractsCacheAnalysisResults>
     <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
     <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -75,6 +77,7 @@
     <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
     <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
     <DocumentationFile>bin\Release\Cloak.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -92,16 +95,21 @@
       <Link>Properties\CloakAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="CachedFunctions.cs" />
+    <Compile Include="Count.cs" />
     <Compile Include="GlobalizedFormatting.cs" />
     <Compile Include="HashCode.cs" />
     <Compile Include="CollectionConversion.cs" />
     <Compile Include="Linq\AlternatingSelection.cs" />
     <Compile Include="Linq\CastSequenceExpression.cs" />
     <Compile Include="Linq\ConstantSequence.cs" />
+    <Compile Include="Linq\ConcatParams.cs" />
+    <Compile Include="Linq\DictionarySequences.cs" />
     <Compile Include="Linq\ExpressionEvaluator.cs" />
     <Compile Include="Linq\LambdaBodies.cs" />
     <Compile Include="Linq\Query.cs" />
     <Compile Include="Linq\QueryProvider.cs" />
+    <Compile Include="Reflection\AnonymousDictionary.cs" />
+    <Compile Include="Reflection\DynamicReflector.cs" />
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -124,6 +132,7 @@
     <Compile Include="Time\ITimeContext.cs" />
     <Compile Include="Time\OffsetTimeContext.cs" />
     <Compile Include="Time\PlatformTimeContext.cs" />
+    <Compile Include="Time\TimeContext.cs" />
     <Compile Include="Time\UtcTimeContext.cs" />
     <Compile Include="Xml\XmlAttributeReading.cs" />
     <Compile Include="Xml\XmlElementReading.cs" />

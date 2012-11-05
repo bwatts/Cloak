@@ -29,7 +29,7 @@ namespace Cloak.Http.Media
 
 			readTask = canRead
 				? content.ReadAsAsync<T>(new[] { format })
-				: Task.Factory.StartNew(() => default(T));
+				: Task.Run(() => default(T));
 
 			return canRead;
 		}

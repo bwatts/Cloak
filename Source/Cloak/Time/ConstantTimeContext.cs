@@ -8,20 +8,25 @@ namespace Cloak.Time
 	/// <summary>
 	/// A context in which all events happen simultaneously
 	/// </summary>
-	public sealed class ConstantTimeContext : ITimeContext
+	public sealed class ConstantTimeContext : TimeContext
 	{
+		private readonly DateTime _now;
+
 		/// <summary>
 		/// Initializes a context with the specified date and time
 		/// </summary>
 		/// <param name="now">The current date and time</param>
 		public ConstantTimeContext(DateTime now)
 		{
-			Now = now;
+			_now = now;
 		}
 
 		/// <summary>
 		/// Gets the date and time specified when this context was created
 		/// </summary>
-		public DateTime Now { get; private set; }
+		public override DateTime Now
+		{
+			get { return _now; }
+		}
 	}
 }

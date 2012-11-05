@@ -122,7 +122,6 @@
     <Compile Include="ApiException.cs" />
     <Compile Include="HttpCall.cs" />
     <Compile Include="HttpCallWithContent.cs" />
-    <Compile Include="ItemStack.cs" />
     <Compile Include="IHttpCall.cs" />
     <Compile Include="Media\AcceptedTypes.cs" />
     <Compile Include="Media\HttpClientAcceptedTypes.cs" />
@@ -140,7 +139,6 @@
     </Compile>
     <Compile Include="Media\MediaPath.cs" />
     <Compile Include="Media\XmlFormat.cs" />
-    <Compile Include="UriPath.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

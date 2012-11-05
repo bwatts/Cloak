@@ -7,7 +7,7 @@ namespace Cloak
 {
 	public static class Params
 	{
-		public static IEnumerable<T> Of<T>(params T[] values)
+		public static T[] Of<T>(params T[] values)
 		{
 			return values;
 		}

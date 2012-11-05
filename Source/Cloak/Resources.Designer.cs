@@ -151,6 +151,15 @@ namespace Cloak {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Property &quot;{0}&quot; is not assignable to value type {1}.
+        /// </summary>
+        internal static string PropertyNotAssignableToValueType {
+            get {
+                return ResourceManager.GetString("PropertyNotAssignableToValueType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0}@{1}.
         /// </summary>
         internal static string QualifiedAttributePath {

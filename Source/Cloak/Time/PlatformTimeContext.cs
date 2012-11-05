@@ -8,12 +8,12 @@ namespace Cloak.Time
 	/// <summary>
 	/// A context in which events happen on the timeline of the current operating system
 	/// </summary>
-	public sealed class PlatformTimeContext : ITimeContext
+	public sealed class PlatformTimeContext : TimeContext
 	{
 		/// <summary>
 		/// Gets the current date and time of the operating system
 		/// </summary>
-		public DateTime Now
+		public override DateTime Now
 		{
 			get { return DateTime.Now; }
 		}

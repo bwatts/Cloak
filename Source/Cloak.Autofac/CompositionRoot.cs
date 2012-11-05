@@ -9,9 +9,9 @@ using Autofac.Core;
 namespace Cloak.Autofac
 {
 	/// <summary>
-	/// The composition of an application composed with an Autofac container
+	/// The composition of an application composed with the  Autofac engine
 	/// </summary>
-	public sealed class CompositionRoot : IDisposable
+	public class CompositionRoot : IDisposable
 	{
 		private readonly IModule _module;
 
@@ -60,41 +60,15 @@ namespace Cloak.Autofac
 	}
 
 	/// <summary>
-	/// The composition of an application composed with an Autofac container
+	/// The composition of an application composed with the  Autofac engine
 	/// </summary>
 	/// <typeparam name="TModule">The type of module which configures the container</typeparam>
-	public sealed class CompositionRoot<TModule> : IDisposable where TModule : IModule, new()
+	public class CompositionRoot<TModule> : CompositionRoot where TModule : IModule, new()
 	{
-		#region IDisposable
 		/// <summary>
-		/// Disposes of <see cref="Container"/>
+		/// Initializes an application composition with a module of type <typeparamref name="T"/>
 		/// </summary>
-		public void Dispose()
-		{
-			if(Container != null)
-			{
-				Container.Dispose();
-
-				Container = null;
-			}
-		}
-		#endregion
-
-		/// <summary>
-		/// Gets the container configured by this application composition
-		/// </summary>
-		public IContainer Container { get; private set; }
-
-		/// <summary>
-		/// Initializes <see cref="Container"/>
-		/// </summary>
-		public void Compose()
-		{
-			var builder = new ContainerBuilder();
-
-			builder.RegisterModule<TModule>();
-
-			Container = builder.Build();
-		}
+		public CompositionRoot() : base(new TModule())
+		{}
 	}
 }

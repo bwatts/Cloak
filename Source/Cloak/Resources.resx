@@ -147,6 +147,9 @@
   <data name="InvalidLambdaExpressionBody" xml:space="preserve">
     <value>Expression body must be a {0}: {1}</value>
   </data>
+  <data name="PropertyNotAssignableToValueType" xml:space="preserve">
+    <value>Property "{0}" is not assignable to value type {1}</value>
+  </data>
   <data name="QualifiedAttributePath" xml:space="preserve">
     <value>{0}@{1}</value>
   </data>

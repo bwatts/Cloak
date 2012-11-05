@@ -9,7 +9,7 @@ namespace Cloak.Time
 	/// <summary>
 	/// A context whose timeline is offset from another context
 	/// </summary>
-	public sealed class OffsetTimeContext : ITimeContext
+	public sealed class OffsetTimeContext : TimeContext
 	{
 		private readonly ITimeContext _innerContext;
 		private readonly TimeSpan _offset;
@@ -30,7 +30,7 @@ namespace Cloak.Time
 		/// <summary>
 		/// Gets the shifted date and time
 		/// </summary>
-		public DateTime Now
+		public override DateTime Now
 		{
 			get { return _innerContext.Now + _offset; }
 		}
