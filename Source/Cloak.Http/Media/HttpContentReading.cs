@@ -34,9 +34,9 @@ namespace Cloak.Http.Media
 			return canRead;
 		}
 
-		public static Task<T> ReadAsAsync<T>(this HttpContent content, params MediaFormat[] formats)
+		public static Task<T> ReadAsAsync<T>(this HttpContent content, MediaFormat format)
 		{
-			return content.ReadAsAsync<T>(formats as IEnumerable<MediaFormat>);
+			return content.ReadAsAsync<T>(new[] { format });
 		}
 
 		public static Task<object> ReadAnyAsync<T1, T2>(this HttpContent content, IEnumerable<MediaFormat> formats)

@@ -30,14 +30,13 @@ namespace Cloak.Http
 			this ApiClient client,
 			Func<HttpClient, Task<HttpResponseMessage>> callSendAsync,
 			Func<HttpContent, Task<TResult>> readResult,
-			AcceptedTypes acceptedTypes = null,
 			bool ensureSuccessStatusCode = true)
 		{
 			Contract.Requires(client != null);
 
 			var httpCall = new HttpCall(callSendAsync);
 
-			var apiCall = new ApiCall(httpCall, acceptedTypes, ensureSuccessStatusCode);
+			var apiCall = new ApiCall(httpCall, new AcceptedTypes(typeof(TResult)), ensureSuccessStatusCode);
 
 			return client.MakeCallAsync(new HttpCall<TResult>(apiCall, readResult));
 		}
@@ -46,14 +45,13 @@ namespace Cloak.Http
 			this ApiClient client,
 			Func<HttpClient, Task<HttpResponseMessage>> callSendAsync,
 			Func<HttpContent, MediaFormats, Task<TResult>> readResult,
-			AcceptedTypes acceptedTypes = null,
 			bool ensureSuccessStatusCode = true)
 		{
 			Contract.Requires(client != null);
 
 			var httpCall = new HttpCall(callSendAsync);
 
-			var apiCall = new ApiCall(httpCall, acceptedTypes, ensureSuccessStatusCode);
+			var apiCall = new ApiCall(httpCall, new AcceptedTypes(typeof(TResult)), ensureSuccessStatusCode);
 
 			return client.MakeCallAsync(new HttpCall<TResult>(apiCall, readResult));
 		}
@@ -77,14 +75,13 @@ namespace Cloak.Http
 			object content,
 			Func<HttpClient, HttpContent, Task<HttpResponseMessage>> callSendAsync,
 			Func<HttpContent, Task<TResult>> readResult,
-			AcceptedTypes acceptedTypes = null,
 			bool ensureSuccessStatusCode = true)
 		{
 			Contract.Requires(client != null);
 
 			var httpCall = new HttpCallWithContent(content, callSendAsync);
 
-			var apiCall = new ApiCall(httpCall, acceptedTypes, ensureSuccessStatusCode);
+			var apiCall = new ApiCall(httpCall, new AcceptedTypes(typeof(TResult)), ensureSuccessStatusCode);
 
 			return client.MakeCallAsync(new HttpCall<TResult>(apiCall, readResult));
 		}
@@ -94,14 +91,13 @@ namespace Cloak.Http
 			object content,
 			Func<HttpClient, HttpContent, Task<HttpResponseMessage>> callSendAsync,
 			Func<HttpContent, MediaFormats, Task<TResult>> readResult,
-			AcceptedTypes acceptedTypes = null,
 			bool ensureSuccessStatusCode = true)
 		{
 			Contract.Requires(client != null);
 
 			var httpCall = new HttpCallWithContent(content, callSendAsync);
 
-			var apiCall = new ApiCall(httpCall, acceptedTypes, ensureSuccessStatusCode);
+			var apiCall = new ApiCall(httpCall, new AcceptedTypes(typeof(TResult)), ensureSuccessStatusCode);
 
 			return client.MakeCallAsync(new HttpCall<TResult>(apiCall, readResult));
 		}
