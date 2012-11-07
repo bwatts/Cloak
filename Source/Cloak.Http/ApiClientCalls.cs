@@ -26,7 +26,7 @@ namespace Cloak.Http
 			return client.MakeCallAsync(new ApiCall(httpCall, acceptedTypes, ensureSuccessStatusCode));
 		}
 
-		public static Task<TResult> SendAsync<TResult>(
+		public static Task<TResult> SendWithResultAsync<TResult>(
 			this ApiClient client,
 			Func<HttpClient, Task<HttpResponseMessage>> callSendAsync,
 			Func<HttpContent, Task<TResult>> readResult,
@@ -41,7 +41,7 @@ namespace Cloak.Http
 			return client.MakeCallAsync(new HttpCall<TResult>(apiCall, readResult));
 		}
 
-		public static Task<TResult> SendAsync<TResult>(
+		public static Task<TResult> SendWithResultAsync<TResult>(
 			this ApiClient client,
 			Func<HttpClient, Task<HttpResponseMessage>> callSendAsync,
 			Func<HttpContent, MediaFormats, Task<TResult>> readResult,
@@ -70,7 +70,7 @@ namespace Cloak.Http
 			return client.MakeCallAsync(new ApiCall(httpCall, acceptedTypes, ensureSuccessStatusCode));
 		}
 
-		public static Task<TResult> SendContentAsync<TResult>(
+		public static Task<TResult> SendContentWithResultAsync<TResult>(
 			this ApiClient client,
 			object content,
 			Func<HttpClient, HttpContent, Task<HttpResponseMessage>> callSendAsync,
@@ -86,7 +86,7 @@ namespace Cloak.Http
 			return client.MakeCallAsync(new HttpCall<TResult>(apiCall, readResult));
 		}
 
-		public static Task<TResult> SendContentAsync<TResult>(
+		public static Task<TResult> SendContentWithResultAsync<TResult>(
 			this ApiClient client,
 			object content,
 			Func<HttpClient, HttpContent, Task<HttpResponseMessage>> callSendAsync,
