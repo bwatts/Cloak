@@ -124,6 +124,15 @@ namespace Cloak {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Expected non-empty string at &apos;{0}&apos;.
+        /// </summary>
+        internal static string ExpectedNonEmptyString {
+            get {
+                return ResourceManager.GetString("ExpectedNonEmptyString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Expression does not call a method: {0}.
         /// </summary>
         internal static string ExpressionDoesNotCallMethodFormat {
@@ -147,6 +156,15 @@ namespace Cloak {
         internal static string InvalidLambdaExpressionBody {
             get {
                 return ResourceManager.GetString("InvalidLambdaExpressionBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid URI &apos;{0}&apos; [at: {1}].
+        /// </summary>
+        internal static string InvalidUri {
+            get {
+                return ResourceManager.GetString("InvalidUri", resourceCulture);
             }
         }
         

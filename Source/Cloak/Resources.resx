@@ -138,6 +138,9 @@
   <data name="ExpectedNonEmptyAttribute" xml:space="preserve">
     <value>Expected non-empty attribute '{0}' at '{1}'</value>
   </data>
+  <data name="ExpectedNonEmptyString" xml:space="preserve">
+    <value>Expected non-empty string at '{0}'</value>
+  </data>
   <data name="ExpressionDoesNotCallMethodFormat" xml:space="preserve">
     <value>Expression does not call a method: {0}</value>
   </data>
@@ -146,6 +149,9 @@
   </data>
   <data name="InvalidLambdaExpressionBody" xml:space="preserve">
     <value>Expression body must be a {0}: {1}</value>
+  </data>
+  <data name="InvalidUri" xml:space="preserve">
+    <value>Invalid URI '{0}' [at: {1}]</value>
   </data>
   <data name="PropertyNotAssignableToValueType" xml:space="preserve">
     <value>Property "{0}" is not assignable to value type {1}</value>
