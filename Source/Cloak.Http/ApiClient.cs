@@ -12,14 +12,18 @@ namespace Cloak.Http
 	{
 		private readonly Func<HttpClient> _httpClientFactory;
 
-		public ApiClient(MediaFormats mediaFormats, Func<HttpClient> httpClientFactory)
+		public ApiClient(Uri baseAddress, Func<HttpClient> httpClientFactory, MediaFormats mediaFormats)
 		{
-			Contract.Requires(mediaFormats != null);
+			Contract.Requires(baseAddress != null);
 			Contract.Requires(httpClientFactory != null);
+			Contract.Requires(mediaFormats != null);
 
-			MediaFormats = mediaFormats;
+			BaseAddress = baseAddress;
 			_httpClientFactory = httpClientFactory;
+			MediaFormats = mediaFormats;
 		}
+
+		public Uri BaseAddress { get; private set; }
 
 		public MediaFormats MediaFormats { get; private set; }
 

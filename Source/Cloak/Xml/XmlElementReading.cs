@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace Cloak
+namespace Cloak.Xml
 {
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public static class XmlElementReading
@@ -36,6 +36,20 @@ namespace Cloak
 			}
 
 			return childElement;
+		}
+
+		public static string RequiredString(this XElement element)
+		{
+			Contract.Requires(element != null);
+
+			var value = (string) element;
+
+			if(String.IsNullOrEmpty(value))
+			{
+				throw new FormatException(Resources.ExpectedNonEmptyString.FormatInvariant(element.GetPath()));
+			}
+
+			return value;
 		}
 	}
 }

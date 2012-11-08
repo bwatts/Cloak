@@ -109,6 +109,8 @@ namespace Cloak.Http.Media
 		{
 			Contract.Requires(headerValue != null);
 
+			Value = headerValue.ToString();
+
 			InitializeFrom(headerValue);
 		}
 

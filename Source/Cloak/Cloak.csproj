@@ -109,6 +109,7 @@
     <Compile Include="Linq\LambdaBodies.cs" />
     <Compile Include="Linq\Query.cs" />
     <Compile Include="Linq\QueryProvider.cs" />
+    <Compile Include="Parsing\StringParsing.cs" />
     <Compile Include="Reflection\AnonymousDictionary.cs" />
     <Compile Include="Reflection\DynamicReflector.cs" />
     <Compile Include="Resources.Designer.cs">

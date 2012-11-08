@@ -155,7 +155,6 @@ namespace Cloak.Http.Media
  			Contract.Requires(type != null);
 			Contract.Requires(readStream != null);
 			Contract.Requires(content != null);
-			Contract.Requires(formatterLogger != null);
 
 			return null;
 		}
@@ -171,8 +170,6 @@ namespace Cloak.Http.Media
 
 		protected override TMedia ConvertFromRepresentation(TRepresentation representation, IFormatterLogger formatterLogger)
 		{
-			Contract.Requires(formatterLogger != null);
-
 			return default(TMedia);
 		}
 
@@ -186,7 +183,6 @@ namespace Cloak.Http.Media
 		{
 			Contract.Requires(stream != null);
 			Contract.Requires(content != null);
-			Contract.Requires(formatterLogger != null);
 
 			return default(TRepresentation);
 		}

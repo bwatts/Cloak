@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace Cloak
+namespace Cloak.Xml
 {
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public static class XmlAttributeReading
@@ -36,6 +36,20 @@ namespace Cloak
 			}
 
 			return attribute;
+		}
+
+		public static string RequiredString(this XAttribute attribute)
+		{
+			Contract.Requires(attribute != null);
+
+			var value = (string) attribute;
+
+			if(String.IsNullOrEmpty(value))
+			{
+				throw new FormatException(Resources.ExpectedNonEmptyString.FormatInvariant(attribute.GetPath()));
+			}
+
+			return value;
 		}
 	}
 }

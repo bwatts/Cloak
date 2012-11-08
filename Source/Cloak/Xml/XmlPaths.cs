@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace Cloak
+namespace Cloak.Xml
 {
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public static class XmlPaths
