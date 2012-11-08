@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CannotConvertString" xml:space="preserve">
+    <value>Cannot convert string "{0}" to {1}</value>
+  </data>
+  <data name="CannotConvertValue" xml:space="preserve">
+    <value>Cannot convert value of type {0} to {1} using type converter {2}</value>
+  </data>
   <data name="ElementIndexedPath" xml:space="preserve">
     <value>/{0}[{1}]</value>
   </data>
@@ -152,5 +158,8 @@
   </data>
   <data name="QualifiedAttributePath" xml:space="preserve">
     <value>{0}@{1}</value>
+  </data>
+  <data name="TypeNotAssignableNull" xml:space="preserve">
+    <value>Value is null, which is not assignable to {0}</value>
   </data>
 </root>

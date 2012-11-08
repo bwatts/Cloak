@@ -61,6 +61,24 @@ namespace Cloak {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot convert string &quot;{0}&quot; to {1}.
+        /// </summary>
+        internal static string CannotConvertString {
+            get {
+                return ResourceManager.GetString("CannotConvertString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot convert value of type {0} to {1} using type converter {2}.
+        /// </summary>
+        internal static string CannotConvertValue {
+            get {
+                return ResourceManager.GetString("CannotConvertValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to /{0}[{1}].
         /// </summary>
         internal static string ElementIndexedPath {
@@ -165,6 +183,15 @@ namespace Cloak {
         internal static string QualifiedAttributePath {
             get {
                 return ResourceManager.GetString("QualifiedAttributePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value is null, which is not assignable to {0}.
+        /// </summary>
+        internal static string TypeNotAssignableNull {
+            get {
+                return ResourceManager.GetString("TypeNotAssignableNull", resourceCulture);
             }
         }
     }
