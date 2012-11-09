@@ -95,7 +95,7 @@
       <Link>Properties\CloakAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="CachedFunctions.cs" />
-    <Compile Include="ConvertTo.cs" />
+    <Compile Include="ObjectConverter.cs" />
     <Compile Include="Count.cs" />
     <Compile Include="GlobalizedFormatting.cs" />
     <Compile Include="HashCode.cs" />
@@ -111,6 +111,8 @@
     <Compile Include="Linq\QueryProvider.cs" />
     <Compile Include="Parsing\StringParsing.cs" />
     <Compile Include="Reflection\AnonymousDictionary.cs" />
+    <Compile Include="Reflection\InheritanceChain.cs" />
+    <Compile Include="Reflection\TypeAssignability.cs" />
     <Compile Include="Reflection\DynamicReflector.cs" />
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -126,7 +128,6 @@
     <Compile Include="Reflection\GenericMethodBase.cs" />
     <Compile Include="Reflection\Reflect.cs" />
     <Compile Include="Reflection\TypeDefaultValue.cs" />
-    <Compile Include="Reflection\TypeNullability.cs" />
     <Compile Include="StringJoin.cs" />
     <Compile Include="ThreadAffinity.cs" />
     <Compile Include="ThreadAffinityException.cs" />

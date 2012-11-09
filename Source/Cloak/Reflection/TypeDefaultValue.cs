@@ -8,7 +8,7 @@ using System.Text;
 namespace Cloak.Reflection
 {
 	/// <summary>
-	/// Gets the default value of <see cref="Type"/> objects
+	/// Extends types with the ability to get default values
 	/// </summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public static class TypeDefaultValue

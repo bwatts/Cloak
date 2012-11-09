@@ -47,9 +47,9 @@ namespace Cloak.Reflection
 			{
 				var value = ReflectValue(binder.Name);
 
-				result = DynamicReflector.For(value.Get(_target, index: null));
+				result = value == null ? null : DynamicReflector.For(value.Get(_target, index: null));
 
-				return true;
+				return result != null;
 			}
 
 			public override bool TrySetMember(SetMemberBinder binder, object value)
@@ -75,7 +75,9 @@ namespace Cloak.Reflection
 
 			public override bool TryInvokeMember(InvokeMemberBinder binder, object[] args, out object result)
 			{
-				result = DynamicReflector.For(InvokeTargetMember(binder.Name, args));
+				var invokeResult = InvokeTargetMember(binder.Name, args);
+
+				result = invokeResult == null ? null : DynamicReflector.For(invokeResult);
 
 				return true;
 			}
@@ -93,20 +95,7 @@ namespace Cloak.Reflection
 
 				ReflectedValue value;
 
-				if(!targetTypeValues.TryGetValue(name, out value))
-				{
-					// Get a list of supported properties and fields, skipping the auto property backing fields which start with '<'
-
-					var valueNames = targetTypeValues.Keys.Where(name2 => name2[0] != '<').OrderBy(name2 => name2);
-
-					throw new ArgumentException(
-						String.Format(
-							"The name {0} does not exist on target type {1}. Supported properties are: {2}",
-							name,
-							_targetType,
-							String.Join(", ", valueNames)),
-						"name");
-				}
+				targetTypeValues.TryGetValue(name, out value);
 
 				return value;
 			}
