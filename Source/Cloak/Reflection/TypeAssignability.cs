@@ -35,7 +35,7 @@ namespace Cloak.Reflection
 		/// <param name="genericDefinition">The generic definition to which may be the specified type</param>
 		/// <returns>Whether the specified generic type definition is the specified type</returns>
 		[Pure]
-		public static bool IsGenericDefinition(this Type type, Type genericDefinition)
+		public static bool HasGenericDefinition(this Type type, Type genericDefinition)
 		{
 			Contract.Requires(type != null);
 
