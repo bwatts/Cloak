@@ -75,7 +75,7 @@ namespace Cloak.Reflection
 
 			public override bool TryInvokeMember(InvokeMemberBinder binder, object[] args, out object result)
 			{
-				var invokeResult = InvokeTargetMember(binder.Name, args);
+				var invokeResult = InvokeTargetMember(_targetType, binder.Name, args);
 
 				result = invokeResult == null ? null : DynamicReflector.For(invokeResult);
 
@@ -139,15 +139,15 @@ namespace Cloak.Reflection
 				return ReflectValue("Item");
 			}
 
-			private object InvokeTargetMember(string name, object[] args)
+			private object InvokeTargetMember(Type targetType, string name, object[] args)
 			{
 				try
 				{
-					return _targetType.InvokeMember(name, _bindingFlags | BindingFlags.InvokeMethod, null, _target, args);
+					return targetType.InvokeMember(name, _bindingFlags | BindingFlags.InvokeMethod, null, _target, args);
 				}
 				catch(MissingMethodException)
 				{
-					return _targetType.BaseType == null ? null : InvokeTargetMember(name, args);
+					return targetType.BaseType == null ? null : InvokeTargetMember(targetType.BaseType, name, args);
 				}
 			}
 		}
