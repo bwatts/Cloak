@@ -47,13 +47,13 @@ namespace Cloak.Http.Media
 		#region Known
 
 		public static readonly MediaType Unspecified = new MediaType("");
+		public static readonly MediaType ApplicationXWwwFormUrlEncoded = new MediaType("application/x-www-form-urlencoded");
 		public static readonly MediaType ApplicationJson = new MediaType("application/json");
-		public static readonly MediaType ApplicationXhtml = new MediaType("application/xhtml+xml");
 		public static readonly MediaType ApplicationXml = new MediaType("application/xml");
-		public static readonly MediaType ApplicationWwwFormUrlEncoded = new MediaType("application/x-www-form-urlencoded");
-		public static readonly MediaType TextHtml = new MediaType("text/html");
 		public static readonly MediaType TextJson = new MediaType("text/json");
 		public static readonly MediaType TextXml = new MediaType("text/xml");
+		public static readonly MediaType Html = new MediaType("text/html");
+		public static readonly MediaType Xhtml = new MediaType("application/xhtml+xml");
 
 		// Each of these subsets is ordered from most to least specific. This ensures the most relevant match during content negotiation.
 
@@ -70,7 +70,6 @@ namespace Cloak.Http.Media
 		{
 			get
 			{
-				yield return ApplicationXhtml;
 				yield return ApplicationXml;
 				yield return TextXml;
 			}
@@ -80,8 +79,8 @@ namespace Cloak.Http.Media
 		{
 			get
 			{
-				yield return ApplicationXhtml;
-				yield return TextHtml;
+				yield return Xhtml;
+				yield return Html;
 			}
 		}
 		#endregion

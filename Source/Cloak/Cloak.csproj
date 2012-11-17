@@ -95,7 +95,8 @@
       <Link>Properties\CloakAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="CachedFunctions.cs" />
-    <Compile Include="ObjectConverter.cs" />
+    <Compile Include="Linq\OrderedDistinctSequences.cs" />
+    <Compile Include="Conversion.cs" />
     <Compile Include="Count.cs" />
     <Compile Include="GlobalizedFormatting.cs" />
     <Compile Include="HashCode.cs" />
@@ -145,6 +146,7 @@
     <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

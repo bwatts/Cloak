@@ -27,18 +27,33 @@ namespace Cloak.Http
 
 		public MediaFormats MediaFormats { get; private set; }
 
-		public virtual Task<HttpResponseMessage> MakeCallAsync(IHttpCall call)
+		public virtual async Task<HttpResponseMessage> MakeCallAsync(IHttpCall call)
 		{
 			Contract.Requires(call != null);
 
-			return call.SendAsync(_httpClientFactory(), MediaFormats);
+			using(var httpClient = CreateHttpClient())
+			{
+				return await call.SendAsync(httpClient, MediaFormats);
+			}
 		}
 
-		public virtual Task<TResult> MakeCallAsync<TResult>(IHttpCall<TResult> call)
+		public virtual async Task<TResult> MakeCallAsync<TResult>(IHttpCall<TResult> call)
 		{
 			Contract.Requires(call != null);
 
-			return call.SendAsync(_httpClientFactory(), MediaFormats);
+			using(var httpClient = CreateHttpClient())
+			{
+				return await call.SendAsync(httpClient, MediaFormats);
+			}
+		}
+
+		private HttpClient CreateHttpClient()
+		{
+			var httpClient = _httpClientFactory();
+
+			httpClient.BaseAddress = BaseAddress;
+
+			return httpClient;
 		}
 	}
 }

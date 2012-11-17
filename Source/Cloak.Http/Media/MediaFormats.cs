@@ -21,7 +21,7 @@ namespace Cloak.Http.Media
 
 			_formats = formats;
 
-			_apiErrorFormat = _formats.FirstOrDefault(format => format.CanReadType(typeof(ApiError)));
+			_apiErrorFormat = _formats.FirstOrDefault(format => format.CanReadType(typeof(IApiError)));
 		}
 
 		public MediaFormats(params MediaFormat[] formats) : this(formats as IList<MediaFormat>)
@@ -89,7 +89,7 @@ namespace Cloak.Http.Media
 			return selectedFormat;
 		}
 
-		public bool TryReadAsApiErrorAsync(HttpContent content, out Task<ApiError> readTask)
+		public bool TryReadAsApiErrorAsync(HttpContent content, out Task<IApiError> readTask)
 		{
 			var isApiError = content != null && IsApiError(content);
 
@@ -108,9 +108,9 @@ namespace Cloak.Http.Media
 			return _apiErrorFormat != null && content.HasFormat(_apiErrorFormat);
 		}
 
-		private Task<ApiError> ReadAsApiErrorAsync(HttpContent content)
+		private Task<IApiError> ReadAsApiErrorAsync(HttpContent content)
 		{
-			return content.ReadAsAsync<ApiError>(_apiErrorFormat);
+			return content.ReadAsAsync<IApiError>(_apiErrorFormat);
 		}
 
 		private static HttpContent GetEmptyContent()

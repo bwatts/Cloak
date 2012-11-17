@@ -47,7 +47,7 @@ namespace Cloak.Http
 
 		private async Task CheckApiErrorAsync(HttpResponseMessage response, MediaFormats mediaFormats)
 		{
-			Task<ApiError> readTask;
+			Task<IApiError> readTask;
 
 			if(mediaFormats.TryReadAsApiErrorAsync(response.Content, out readTask))
 			{

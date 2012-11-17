@@ -20,7 +20,7 @@ namespace Cloak.Http.Media
 		}
 
 		public AcceptedTypes(params Type[] types) : this(types as IList<Type>)
-		{ }
+		{}
 
 		public Type this[int index]
 		{

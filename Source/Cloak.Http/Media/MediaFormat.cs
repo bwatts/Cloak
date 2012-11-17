@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Diagnostics.Contracts;
 using System.IO;
 using System.Linq;
@@ -9,26 +10,46 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using Cloak.Linq;
 
 namespace Cloak.Http.Media
 {
 	[ContractClass(typeof(MediaFormatContract))]
-	public abstract class MediaFormat : BufferedMediaTypeFormatter
+	public abstract class MediaFormat : BufferedMediaTypeFormatter	// TODO: Consider using MediaTypeFormatter with async instead
 	{
 		protected MediaFormat()
 		{
+			SupportedMediaTypes.Clear();	// TODO: Determine if this is necessary
+
 			SetDefaultSupportedEncodings();
 		}
 
-		protected MediaFormat(MediaType mediaType) : this()
+		protected MediaFormat(IEnumerable<MediaType> supportedMediaTypes) : this()
 		{
-			Supports(mediaType);
+			Contract.Requires(supportedMediaTypes != null);
+
+			AddSupportedMediaTypes(supportedMediaTypes.DistinctInOrder());
 		}
 
-		protected MediaFormat(params MediaType[] mediaTypes) : this()
+		protected MediaFormat(params MediaType[] supportedMediaTypes) : this(supportedMediaTypes as IEnumerable<MediaType>)
+		{}
+
+		protected MediaFormat(MediaType preferredMediaType) : this()
 		{
-			Supports(mediaTypes);
+			Contract.Requires(preferredMediaType != null);
+
+			AddSupportedMediaType(preferredMediaType);
 		}
+
+		protected MediaFormat(MediaType preferredMediaType, IEnumerable<MediaType> otherMediaTypes) : this(preferredMediaType)
+		{
+			Contract.Requires(otherMediaTypes != null);
+
+			AddSupportedMediaTypes(otherMediaTypes.DistinctInOrder());
+		}
+
+		protected MediaFormat(MediaType preferredMediaType, params MediaType[] otherMediaTypes) : this(preferredMediaType, otherMediaTypes as IEnumerable<MediaType>)
+		{}
 
 		public virtual MediaType PreferredMediaType
 		{
@@ -65,37 +86,24 @@ namespace Cloak.Http.Media
 
 		protected abstract object ReadMedia(Type type, Stream readStream, HttpContent content, IFormatterLogger formatterLogger);
 
-		protected void SetDefaultSupportedEncodings()
+		private void SetDefaultSupportedEncodings()
 		{
 			SupportedEncodings.Clear();
 
 			SupportedEncodings.Add(Encoding.UTF8);
 		}
 
-		protected void Supports(MediaType mediaType)
+		private void AddSupportedMediaType(MediaType mediaType)
 		{
-			Contract.Requires(mediaType != null);
-
-			// Adding supported media types in reverse order ensures the most specific ones are at the top of the list.
-			//
-			// This is important during content formatting and negotiation.
-
-			SupportedMediaTypes.Insert(0, mediaType.ToHeaderValue());
+			SupportedMediaTypes.Add(mediaType.ToHeaderValue());
 		}
 
-		protected void Supports(IEnumerable<MediaType> mediaTypes)
+		private void AddSupportedMediaTypes(IEnumerable<MediaType> mediaTypes)
 		{
-			Contract.Requires(mediaTypes != null);
-
 			foreach(var mediaType in mediaTypes)
 			{
-				Supports(mediaType);
+				AddSupportedMediaType(mediaType);
 			}
-		}
-
-		protected void Supports(params MediaType[] mediaTypes)
-		{
-			Supports(mediaTypes as IEnumerable<MediaType>);
 		}
 	}
 
@@ -105,10 +113,19 @@ namespace Cloak.Http.Media
 		protected MediaFormat() : base()
 		{}
 
-		protected MediaFormat(MediaType mediaType) : base(mediaType)
+		protected MediaFormat(IEnumerable<MediaType> supportedMediaTypes) : base(supportedMediaTypes)
 		{}
 
-		protected MediaFormat(params MediaType[] mediaTypes) : base(mediaTypes)
+		protected MediaFormat(params MediaType[] supportedMediaTypes) : base(supportedMediaTypes)
+		{}
+
+		protected MediaFormat(MediaType preferredMediaType) : base(preferredMediaType)
+		{}
+
+		protected MediaFormat(MediaType preferredMediaType, IEnumerable<MediaType> otherMediaTypes) : base(preferredMediaType, otherMediaTypes)
+		{}
+
+		protected MediaFormat(MediaType preferredMediaType, params MediaType[] otherMediaTypes) : base(preferredMediaType, otherMediaTypes)
 		{}
 
 		public override bool CanWriteType(Type type)

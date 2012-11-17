@@ -16,13 +16,22 @@ namespace Cloak.Http.Media
 {
 	public abstract class JsonFormat<TMedia> : MediaFormat<TMedia, JToken>
 	{
-		protected JsonFormat() : base()
+		protected JsonFormat() : base(MediaType.JsonTypes)
 		{}
 
-		protected JsonFormat(MediaType mediaType) : base(mediaType)
+		protected JsonFormat(IEnumerable<MediaType> supportedMediaTypes) : base(supportedMediaTypes.Concat(MediaType.JsonTypes))
 		{}
 
-		protected JsonFormat(params MediaType[] mediaTypes) : base(mediaTypes)
+		protected JsonFormat(params MediaType[] supportedMediaTypes) : this(supportedMediaTypes as IEnumerable<MediaType>)
+		{}
+
+		protected JsonFormat(MediaType preferredMediaType) : base(preferredMediaType, MediaType.JsonTypes)
+		{}
+
+		protected JsonFormat(MediaType preferredMediaType, IEnumerable<MediaType> otherMediaTypes) : base(preferredMediaType, otherMediaTypes.Concat(MediaType.JsonTypes))
+		{}
+
+		protected JsonFormat(MediaType preferredMediaType, params MediaType[] otherMediaTypes) : this(preferredMediaType, otherMediaTypes as IEnumerable<MediaType>)
 		{}
 
 		protected override void WriteRepresentation(JToken representation, Stream stream, HttpContent content)

@@ -12,13 +12,22 @@ namespace Cloak.Http.Media
 {
 	public abstract class XmlFormat<TMedia> : MediaFormat<TMedia, XElement>
 	{
-		protected XmlFormat() : base()
+		protected XmlFormat() : base(MediaType.XmlTypes)
 		{}
 
-		protected XmlFormat(MediaType mediaType) : base(mediaType)
+		protected XmlFormat(IEnumerable<MediaType> supportedMediaTypes) : base(supportedMediaTypes.Concat(MediaType.XmlTypes))
 		{}
 
-		protected XmlFormat(params MediaType[] mediaTypes) : base(mediaTypes)
+		protected XmlFormat(params MediaType[] supportedMediaTypes) : this(supportedMediaTypes as IEnumerable<MediaType>)
+		{}
+
+		protected XmlFormat(MediaType preferredMediaType) : base(preferredMediaType, MediaType.XmlTypes)
+		{}
+
+		protected XmlFormat(MediaType preferredMediaType, IEnumerable<MediaType> otherMediaTypes) : base(preferredMediaType, otherMediaTypes.Concat(MediaType.XmlTypes))
+		{}
+
+		protected XmlFormat(MediaType preferredMediaType, params MediaType[] otherMediaTypes) : this(preferredMediaType, otherMediaTypes as IEnumerable<MediaType>)
 		{}
 
 		protected override void WriteRepresentation(XElement representation, Stream stream, HttpContent content)
