@@ -95,9 +95,9 @@
       <Link>Properties\CloakAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="CachedFunctions.cs" />
+    <Compile Include="CountConverter.cs" />
     <Compile Include="Linq\OrderedDistinctSequences.cs" />
     <Compile Include="Conversion.cs" />
-    <Compile Include="Count.cs" />
     <Compile Include="GlobalizedFormatting.cs" />
     <Compile Include="HashCode.cs" />
     <Compile Include="CollectionConversion.cs" />
@@ -110,6 +110,7 @@
     <Compile Include="Linq\LambdaBodies.cs" />
     <Compile Include="Linq\Query.cs" />
     <Compile Include="Linq\QueryProvider.cs" />
+    <Compile Include="Count.cs" />
     <Compile Include="Parsing\StringParsing.cs" />
     <Compile Include="Reflection\AnonymousDictionary.cs" />
     <Compile Include="Reflection\InheritanceChain.cs" />

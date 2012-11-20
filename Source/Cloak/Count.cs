@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics.Contracts;
 using System.Globalization;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Cloak
 {
 	/// <summary>
-	/// An integer representing a zero-or-greater count of items
+	/// A whole number representing a count of items
 	/// </summary>
 	[Serializable]
+	[TypeConverter(typeof(CountConverter))]
 	public struct Count : IEquatable<Count>, IComparable<Count>
 	{
 		#region Operators
@@ -56,6 +57,36 @@ namespace Cloak
 			return new Count(x.Value - y.Value);
 		}
 
+		public static bool operator ==(Count x, int y)
+		{
+			return x.Value == y;
+		}
+
+		public static bool operator !=(Count x, int y)
+		{
+			return x.Value != y;
+		}
+
+		public static bool operator >(Count x, int y)
+		{
+			return x.Value > y;
+		}
+
+		public static bool operator <(Count x, int y)
+		{
+			return x.Value < y;
+		}
+
+		public static bool operator >=(Count x, int y)
+		{
+			return x.Value >= y;
+		}
+
+		public static bool operator <=(Count x, int y)
+		{
+			return x.Value <= y;
+		}
+
 		public static Count operator +(Count x, int y)
 		{
 			return new Count(x.Value + y);
@@ -67,7 +98,7 @@ namespace Cloak
 		}
 		#endregion
 
-		public static readonly Count None = default(Count);
+		public static readonly Count None = new Count();
 
 		public Count(int value) : this()
 		{
