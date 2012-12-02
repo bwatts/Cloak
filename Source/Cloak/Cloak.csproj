@@ -103,7 +103,7 @@
     <Compile Include="CollectionConversion.cs" />
     <Compile Include="Linq\AlternatingSelection.cs" />
     <Compile Include="Linq\CastSequenceExpression.cs" />
-    <Compile Include="Linq\ConstantSequence.cs" />
+    <Compile Include="Linq\ExpressionSequence.cs" />
     <Compile Include="Linq\ConcatParams.cs" />
     <Compile Include="Linq\DictionarySequences.cs" />
     <Compile Include="Linq\ExpressionEvaluator.cs" />
