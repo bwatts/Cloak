@@ -94,6 +94,7 @@
     <Compile Include="..\CloakAssemblyInfo.cs">
       <Link>Properties\CloakAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Builder.cs" />
     <Compile Include="CachedFunctions.cs" />
     <Compile Include="CountConverter.cs" />
     <Compile Include="Linq\OrderedDistinctSequences.cs" />
