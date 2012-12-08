@@ -114,6 +114,7 @@
     <Compile Include="Count.cs" />
     <Compile Include="Parsing\StringParsing.cs" />
     <Compile Include="Reflection\AnonymousDictionary.cs" />
+    <Compile Include="Reflection\Extensions.cs" />
     <Compile Include="Reflection\InheritanceChain.cs" />
     <Compile Include="Reflection\TypeAssignability.cs" />
     <Compile Include="Reflection\DynamicReflector.cs" />
