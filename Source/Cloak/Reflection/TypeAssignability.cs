@@ -43,13 +43,13 @@ namespace Cloak.Reflection
 		}
 
 		/// <summary>
-		/// Determines if the specified generic type definition is assignable from the specified type
+		/// Determines if the specified type definition is assignable to the specified generic definition
 		/// </summary>
 		/// <param name="type">The type which may be assignable to the specified generic type definition</param>
 		/// <param name="genericDefinition">The generic definition to which the specified type may be assignable</param>
-		/// <returns>Whether the specified generic type definition is assignable from the specified type</returns>
+		/// <returns>Whether the specified generic type definition is assignable to the specified generic definition</returns>
 		[Pure]
-		public static bool IsAssignableFromGenericDefinition(this Type type, Type genericDefinition)
+		public static bool IsAssignableToGenericDefinition(this Type type, Type genericDefinition)
 		{
 			Contract.Requires(type != null);
 
