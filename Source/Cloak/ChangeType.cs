@@ -10,7 +10,7 @@ using Cloak.Reflection;
 
 namespace Cloak
 {
-	public static class Conversion
+	public static class ChangeType
 	{
 		public static object To(Type type, object value)
 		{
@@ -46,7 +46,7 @@ namespace Cloak
 			return convertedValue;
 		}
 
-		public static bool Try(Type type, object value, out object result)
+		public static bool TryTo(Type type, object value, out object result)
 		{
 			Contract.Requires(type != null);
 
@@ -81,11 +81,11 @@ namespace Cloak
 			return (T) To(typeof(T), value);
 		}
 
-		public static bool Try<T>(object value, out T result)
+		public static bool TryTo<T>(object value, out T result)
 		{
 			object untypedResult;
 
-			var success = Try(typeof(T), value, out untypedResult);
+			var success = TryTo(typeof(T), value, out untypedResult);
 
 			result = success ? (T) untypedResult : default(T);
 

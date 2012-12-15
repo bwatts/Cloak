@@ -98,7 +98,7 @@
     <Compile Include="CachedFunctions.cs" />
     <Compile Include="CountConverter.cs" />
     <Compile Include="Linq\OrderedDistinctSequences.cs" />
-    <Compile Include="Conversion.cs" />
+    <Compile Include="ChangeType.cs" />
     <Compile Include="GlobalizedFormatting.cs" />
     <Compile Include="HashCode.cs" />
     <Compile Include="CollectionConversion.cs" />
