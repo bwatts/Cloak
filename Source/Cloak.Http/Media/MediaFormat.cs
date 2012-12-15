@@ -162,14 +162,14 @@ namespace Cloak.Http.Media
 	{
 		protected override void WriteMedia(Type type, object value, Stream writeStream, HttpContent content)
 		{
- 			Contract.Requires(type != null);
+			Contract.Requires(type != null);
 			Contract.Requires(writeStream != null);
 			Contract.Requires(content != null);
 		}
 
 		protected override object ReadMedia(Type type, Stream readStream, HttpContent content, IFormatterLogger formatterLogger)
 		{
- 			Contract.Requires(type != null);
+			Contract.Requires(type != null);
 			Contract.Requires(readStream != null);
 			Contract.Requires(content != null);
 
