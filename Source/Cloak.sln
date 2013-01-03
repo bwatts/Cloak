@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloak.Examples", "Cloak.Exa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloak.Web.Http.Autofac", "Cloak.Web.Http.Autofac\Cloak.Web.Http.Autofac.csproj", "{24377703-7195-4DAB-B323-1A8D263D7B12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloak.Wpf", "Cloak.Wpf\Cloak.Wpf.csproj", "{5595EB9F-5910-4F93-A2FB-1B3E14B10B58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +70,10 @@ Global
 		{24377703-7195-4DAB-B323-1A8D263D7B12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24377703-7195-4DAB-B323-1A8D263D7B12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24377703-7195-4DAB-B323-1A8D263D7B12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5595EB9F-5910-4F93-A2FB-1B3E14B10B58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5595EB9F-5910-4F93-A2FB-1B3E14B10B58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5595EB9F-5910-4F93-A2FB-1B3E14B10B58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5595EB9F-5910-4F93-A2FB-1B3E14B10B58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
