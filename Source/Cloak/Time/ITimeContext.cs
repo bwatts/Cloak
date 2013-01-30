@@ -16,10 +16,10 @@ namespace Cloak.Time
 		DateTime Now { get; }
 
 		/// <summary>
-		/// Gets natural text representing the difference from <see cref="Now"/> to the specified reference point
+		/// Gets the interval between <see cref="Now"/> and the specified reference point
 		/// </summary>
 		/// <param name="referencePoint">The time relative to <see cref="Now"/></param>
-		/// <returns>Naturla text describing the difference from <see cref="Now"/> to the specified reference point</returns>
-		string GetRelativeText(DateTime referencePoint);
+		/// <returns>The interval between <see cref="Now"/> and the specified reference point</returns>
+		RelativeTime NowRelativeTo(DateTime referencePoint);
 	}
 }

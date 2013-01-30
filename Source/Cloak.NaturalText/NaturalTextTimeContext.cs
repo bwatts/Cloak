@@ -25,14 +25,9 @@ namespace Cloak.NaturalText
 			get { return _baseContext.Now; }
 		}
 
-		public string GetRelativeText(DateTime referencePoint)
+		public RelativeTime NowRelativeTo(DateTime referencePoint)
 		{
-			return GetRelativeText(_baseContext.Now, referencePoint);
-		}
-
-		private string GetRelativeText(DateTime now, DateTime referencePoint)
-		{
-			return referencePoint.ToNaturalText(now, round: true);
+			return new RelativeTime(Now, referencePoint, Now.ToNaturalText(referencePoint, round: true));
 		}
 	}
 }

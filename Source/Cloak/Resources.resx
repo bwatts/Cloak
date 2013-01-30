@@ -121,7 +121,7 @@
     <value>Cannot convert string "{0}" to {1}</value>
   </data>
   <data name="CannotConvertValue" xml:space="preserve">
-    <value>Cannot convert value of type {0} to {1} using type converter {2}</value>
+    <value>Cannot convert value of type {0} to {1}</value>
   </data>
   <data name="ElementIndexedPath" xml:space="preserve">
     <value>/{0}[{1}]</value>
@@ -147,11 +147,17 @@
   <data name="ExpectedNonEmptyString" xml:space="preserve">
     <value>Expected non-empty string at '{0}'</value>
   </data>
-  <data name="ExpressionDoesNotCallMethodFormat" xml:space="preserve">
-    <value>Expression does not call a method: {0}</value>
+  <data name="ExpressionDoesNotAccessField" xml:space="preserve">
+    <value>Expression does not access a field: {0}</value>
   </data>
-  <data name="ExpressionDoesNotSelectMemberFormat" xml:space="preserve">
-    <value>Expression does not select a member: {0}</value>
+  <data name="ExpressionDoesNotAccessMember" xml:space="preserve">
+    <value>Expression does not access a member: {0}</value>
+  </data>
+  <data name="ExpressionDoesNotAccessProperty" xml:space="preserve">
+    <value>Expression does not access a property: {0}</value>
+  </data>
+  <data name="ExpressionDoesNotCallMethod" xml:space="preserve">
+    <value>Expression does not call a method: {0}</value>
   </data>
   <data name="InvalidLambdaExpressionBody" xml:space="preserve">
     <value>Expression body must be a {0}: {1}</value>
